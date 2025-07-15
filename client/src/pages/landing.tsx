@@ -8,6 +8,7 @@ import TrustFactors from "@/components/trust-factors";
 import FAQSection from "@/components/faq-section";
 import ContactSection from "@/components/contact-section";
 import FloatingWhatsApp from "@/components/floating-whatsapp";
+import leadsureLogo from "@/assets/LeadSure_1752589628551.png";
 
 export default function Landing() {
   return (
@@ -17,7 +18,7 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <i className="fas fa-database text-primary text-2xl mr-3"></i>
+              <img src={leadsureLogo} alt="LeadSure Logo" className="h-8 mr-3" />
               <h1 className="text-xl font-bold text-neutral">LeadSure</h1>
             </div>
             <div className="hidden md:flex items-center space-x-6">
@@ -46,7 +47,7 @@ export default function Landing() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex items-center justify-center mb-4">
-              <i className="fas fa-database text-primary text-2xl mr-3"></i>
+              <img src={leadsureLogo} alt="LeadSure Logo" className="h-8 mr-3" />
               <h3 className="text-xl font-bold">LeadSure</h3>
             </div>
             <p className="text-gray-400 mb-4">Professional lead generation service delivering fresh Apollo data on demand</p>
