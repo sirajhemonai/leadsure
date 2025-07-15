@@ -4,6 +4,8 @@
 
 LeadSure is a lead generation service that provides fresh, targeted Apollo data to customers. The application is built as a full-stack web application with a React frontend and Express backend, designed to handle orders for lead generation services and free trials.
 
+**Status**: Deployed and running on Replit with database integration.
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
