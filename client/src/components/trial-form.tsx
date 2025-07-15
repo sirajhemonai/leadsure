@@ -53,7 +53,7 @@ export default function TrialForm() {
     <section id="trial" className="py-16 bg-white">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <Card className="bg-green-50">
-          <CardContent className="p-8">
+          <CardContent className="p-4 sm:p-8">
             <div className="text-center mb-8">
               <i className="fas fa-gift text-secondary text-4xl mb-4"></i>
               <h2 className="text-2xl font-bold text-neutral mb-4">Try Before You Buy</h2>

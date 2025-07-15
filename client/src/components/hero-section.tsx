@@ -3,7 +3,7 @@ export default function HeroSection() {
     <section className="bg-gradient-to-br from-blue-50 to-indigo-100 pt-20 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-neutral mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-neutral mb-6">
             Get 100% Fresh Apollo Leads
             <span className="text-primary"> On Demand</span>
           </h1>
@@ -20,7 +20,7 @@ export default function HeroSection() {
               Start Your Order
             </a>
           </div>
-          <div className="mt-8 flex items-center justify-center space-x-8 text-sm text-gray-500">
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-sm text-gray-500">
             <div className="flex items-center">
               <i className="fas fa-clock text-secondary mr-2"></i>
               <span>Few Hours Delivery</span>
