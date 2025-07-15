@@ -54,7 +54,12 @@ export default function OrderForm() {
   });
 
   const onSubmit = (data: OrderFormData) => {
-    createOrderMutation.mutate(data);
+    const totalPrice = calculatePrice(data.numberOfLeads);
+    const orderData = {
+      ...data,
+      totalPrice
+    };
+    createOrderMutation.mutate(orderData);
   };
 
   const calculatePrice = (leads: number) => {
