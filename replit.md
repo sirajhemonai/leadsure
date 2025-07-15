@@ -81,6 +81,8 @@ Preferred communication style: Simple, everyday language.
 - **Backend**: Bundled Node.js application with ESM modules
 - **Database**: Serverless PostgreSQL (Neon) with connection pooling
 - **Environment**: Production mode with optimized builds
+- **SSL/HTTPS**: Configured for custom domain SSL with automatic HTTPS redirect and security headers
+- **Proxy Trust**: Enabled for SSL termination handling
 
 ### Key Configuration
 - **Monorepo Structure**: Client, server, and shared code in separate directories
