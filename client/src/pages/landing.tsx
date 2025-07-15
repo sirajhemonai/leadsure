@@ -18,7 +18,7 @@ export default function Landing() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <i className="fas fa-database text-primary text-2xl mr-3"></i>
-              <h1 className="text-xl font-bold text-neutral">Fresh Leads Pro</h1>
+              <h1 className="text-xl font-bold text-neutral">LeadSure</h1>
             </div>
             <div className="hidden md:flex items-center space-x-6">
               <a href="#how-it-works" className="text-gray-600 hover:text-primary transition-colors">How It Works</a>
@@ -47,7 +47,7 @@ export default function Landing() {
           <div className="text-center">
             <div className="flex items-center justify-center mb-4">
               <i className="fas fa-database text-primary text-2xl mr-3"></i>
-              <h3 className="text-xl font-bold">Fresh Leads Pro</h3>
+              <h3 className="text-xl font-bold">LeadSure</h3>
             </div>
             <p className="text-gray-400 mb-4">Professional lead generation service delivering fresh Apollo data on demand</p>
             <div className="flex justify-center space-x-6">
@@ -57,7 +57,7 @@ export default function Landing() {
               <a href="https://wa.me/8801919201192" target="_blank" className="text-gray-400 hover:text-white transition-colors">Contact</a>
             </div>
             <div className="mt-6 pt-6 border-t border-gray-700 text-sm text-gray-400">
-              <p>&copy; 2024 Fresh Leads Pro. All rights reserved.</p>
+              <p>&copy; 2025 LeadSure. All rights reserved.</p>
             </div>
           </div>
         </div>

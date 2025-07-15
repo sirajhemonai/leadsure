@@ -1,8 +1,8 @@
-# Fresh Leads Pro - Lead Generation Service
+# LeadSure - Lead Generation Service
 
 ## Overview
 
-Fresh Leads Pro is a lead generation service that provides fresh, targeted Apollo data to customers. The application is built as a full-stack web application with a React frontend and Express backend, designed to handle orders for lead generation services and free trials.
+LeadSure is a lead generation service that provides fresh, targeted Apollo data to customers. The application is built as a full-stack web application with a React frontend and Express backend, designed to handle orders for lead generation services and free trials.
 
 ## User Preferences
 
