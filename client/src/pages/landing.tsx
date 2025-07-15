@@ -82,6 +82,11 @@ export default function Landing() {
               <a href="#faq" className="text-gray-400 hover:text-white transition-colors">FAQ</a>
               <a href="https://wa.me/8801919201192" target="_blank" className="text-gray-400 hover:text-white transition-colors">Contact</a>
             </div>
+            <div className="flex justify-center space-x-4 mt-4">
+              <a href="/privacy" className="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
+              <span className="text-gray-500">|</span>
+              <a href="/impressum" className="text-gray-400 hover:text-white transition-colors text-sm">Impressum</a>
+            </div>
             <div className="mt-6 pt-6 border-t border-gray-700 text-sm text-gray-400">
               <p>&copy; 2025 LeadSure. All rights reserved.</p>
             </div>
