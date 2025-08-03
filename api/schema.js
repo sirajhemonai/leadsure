@@ -1,50 +1,44 @@
-// ES module version of shared schema for Vercel API functions
-import { pgTable, serial, text, integer, timestamp, pgEnum } from 'drizzle-orm/pg-core';
+// ES module version of shared schema for Vercel API functions (matching original schema)
+import { pgTable, serial, text, integer, timestamp } from 'drizzle-orm/pg-core';
 import { createInsertSchema } from 'drizzle-zod';
 import { z } from 'zod';
 
-// Payment method enum
-export const paymentMethodEnum = pgEnum('payment_method', ['wise', 'binance', 'bank_transfer']);
-
-// Status enum  
-export const statusEnum = pgEnum('status', ['pending', 'processing', 'completed', 'cancelled']);
-
-// Orders table
+// Orders table (matching original schema)
 export const orders = pgTable('orders', {
   id: serial('id').primaryKey(),
-  name: text('name').notNull(),
+  fullName: text('full_name').notNull(),
   email: text('email').notNull(),
-  whatsapp: text('whatsapp').notNull(),
-  apolloLinks: text('apollo_links').array().notNull(),
-  leadQuantity: integer('lead_quantity').notNull(),
-  paymentMethod: paymentMethodEnum('payment_method').notNull(),
+  whatsappNumber: text('whatsapp_number').notNull(),
+  apolloFilterLink: text('apollo_filter_link').notNull(),
+  numberOfLeads: integer('number_of_leads').notNull(),
+  paymentMethod: text('payment_method').notNull(),
+  additionalRequirements: text('additional_requirements'),
   totalPrice: integer('total_price').notNull(),
-  status: statusEnum('status').default('pending').notNull(),
-  createdAt: timestamp('created_at').defaultNow().notNull(),
-  updatedAt: timestamp('updated_at').defaultNow().notNull()
+  status: text('status').notNull().default('pending'),
+  createdAt: timestamp('created_at').defaultNow().notNull()
 });
 
-// Trials table
+// Trials table (matching original schema)
 export const trials = pgTable('trials', {
   id: serial('id').primaryKey(), 
-  name: text('name').notNull(),
+  fullName: text('full_name').notNull(),
   email: text('email').notNull(),
-  whatsapp: text('whatsapp').notNull(),
+  whatsappNumber: text('whatsapp_number').notNull(),
+  apolloFilterLink: text('apollo_filter_link').notNull(),
   businessType: text('business_type').notNull(),
-  status: statusEnum('status').default('pending').notNull(),
-  createdAt: timestamp('created_at').defaultNow().notNull(),
-  updatedAt: timestamp('updated_at').defaultNow().notNull()
+  status: text('status').notNull().default('pending'),
+  createdAt: timestamp('created_at').defaultNow().notNull()
 });
 
-// Create insert schemas
+// Create insert schemas (matching original)
 export const insertOrderSchema = createInsertSchema(orders).omit({
   id: true,
   createdAt: true,
-  updatedAt: true
+  status: true
 });
 
 export const insertTrialSchema = createInsertSchema(trials).omit({
   id: true, 
   createdAt: true,
-  updatedAt: true
+  status: true
 });
