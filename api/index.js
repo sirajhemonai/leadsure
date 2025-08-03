@@ -1,12 +1,10 @@
 // Vercel serverless function for LeadSure API
-const { Pool, neonConfig } = require('@neondatabase/serverless');
-const { drizzle } = require('drizzle-orm/neon-serverless');
-const ws = require('ws');
+import { Pool, neonConfig } from '@neondatabase/serverless';
+import { drizzle } from 'drizzle-orm/neon-serverless';
+import ws from 'ws';
+import * as schema from './schema.js';
 
 neonConfig.webSocketConstructor = ws;
-
-// Schema imports (CommonJS version for Vercel compatibility)
-const schema = require('./schema.js');
 
 if (!process.env.DATABASE_URL) {
   throw new Error('DATABASE_URL must be set');
@@ -15,7 +13,7 @@ if (!process.env.DATABASE_URL) {
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 const db = drizzle({ client: pool, schema });
 
-module.exports = async (req, res) => {
+export default async (req, res) => {
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');

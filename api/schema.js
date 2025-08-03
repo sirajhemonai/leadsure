@@ -1,16 +1,16 @@
-// CommonJS version of shared schema for Vercel API functions
-const { pgTable, serial, text, integer, timestamp, pgEnum } = require('drizzle-orm/pg-core');
-const { createInsertSchema } = require('drizzle-zod');
-const { z } = require('zod');
+// ES module version of shared schema for Vercel API functions
+import { pgTable, serial, text, integer, timestamp, pgEnum } from 'drizzle-orm/pg-core';
+import { createInsertSchema } from 'drizzle-zod';
+import { z } from 'zod';
 
 // Payment method enum
-const paymentMethodEnum = pgEnum('payment_method', ['wise', 'binance', 'bank_transfer']);
+export const paymentMethodEnum = pgEnum('payment_method', ['wise', 'binance', 'bank_transfer']);
 
 // Status enum  
-const statusEnum = pgEnum('status', ['pending', 'processing', 'completed', 'cancelled']);
+export const statusEnum = pgEnum('status', ['pending', 'processing', 'completed', 'cancelled']);
 
 // Orders table
-const orders = pgTable('orders', {
+export const orders = pgTable('orders', {
   id: serial('id').primaryKey(),
   name: text('name').notNull(),
   email: text('email').notNull(),
@@ -25,7 +25,7 @@ const orders = pgTable('orders', {
 });
 
 // Trials table
-const trials = pgTable('trials', {
+export const trials = pgTable('trials', {
   id: serial('id').primaryKey(), 
   name: text('name').notNull(),
   email: text('email').notNull(),
@@ -37,23 +37,14 @@ const trials = pgTable('trials', {
 });
 
 // Create insert schemas
-const insertOrderSchema = createInsertSchema(orders).omit({
+export const insertOrderSchema = createInsertSchema(orders).omit({
   id: true,
   createdAt: true,
   updatedAt: true
 });
 
-const insertTrialSchema = createInsertSchema(trials).omit({
+export const insertTrialSchema = createInsertSchema(trials).omit({
   id: true, 
   createdAt: true,
   updatedAt: true
 });
-
-module.exports = {
-  orders,
-  trials,
-  insertOrderSchema,
-  insertTrialSchema,
-  paymentMethodEnum,
-  statusEnum
-};
